@@ -1,0 +1,66 @@
+---
+import { Github, Linkedin, Instagram, Mail } from "lucide-react";
+---
+
+<div
+    class="flex items-center justify-center gap-6 mt-12 opacity-80 hover:opacity-80 transition-opacity"
+>
+    <!-- Hidden SVG for Gradient Definition -->
+    <svg width="0" height="0" class="absolute">
+        <defs>
+            <linearGradient
+                id="instagram-gradient"
+                x1="100%"
+                y1="100%"
+                x2="0%"
+                y2="0%"
+            >
+                <stop stop-color="#833ab4" offset="0%"></stop>
+                <stop stop-color="#fd1d1d" offset="50%"></stop>
+                <stop stop-color="#fcb045" offset="100%"></stop>
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <a
+        href="https://github.com/berkentekin"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors opacity-80 hover:opacity-80"
+        aria-label="GitHub"
+    >
+        <Github size={24} strokeWidth={1.5} />
+    </a>
+    <a
+        href="https://linkedin.com/in/berkentekin"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-600 dark:text-gray-400 hover:text-[#0077b5] transition-colors opacity-80 hover:opacity-80"
+        aria-label="LinkedIn"
+    >
+        <Linkedin size={24} strokeWidth={1.5} />
+    </a>
+    <a
+        href="https://instagram.com/berken.tekin"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-600 dark:text-gray-400 instagram-hover transition-colors opacity-80 hover:opacity-80"
+        aria-label="Instagram"
+    >
+        <Instagram size={24} strokeWidth={1.5} />
+    </a>
+    <a
+        href="mailto:tekin.berken01@outlook.com"
+        class="text-gray-600 dark:text-gray-400 hover:text-[#1aadf7] transition-colors opacity-80 hover:opacity-80"
+        aria-label="Email"
+    >
+        <Mail size={24} strokeWidth={1.5} />
+    </a>
+
+    <style>
+        /* Specific selector to override current currentColor stroke on hover */
+        .instagram-hover:hover :global(svg) {
+            stroke: url(#instagram-gradient);
+        }
+    </style>
+</div>
