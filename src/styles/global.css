@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@utility scrollbar-gutter-stable {
+    scrollbar-gutter: stable;
+}
+
+@theme {
+    --font-serif: "Lusitana", serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Global smooth transition for theme switching */
+body,
+main,
+aside,
+header,
+footer,
+nav,
+section,
+article,
+div,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button,
+input,
+textarea,
+select,
+li,
+ul,
+ol,
+blockquote,
+pre,
+code,
+svg,
+path,
+label,
+table,
+tr,
+td,
+th,
+form {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+}

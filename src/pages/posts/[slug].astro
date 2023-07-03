@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("posts");
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+	<article
+		class="prose prose-neutral lg:prose-xl max-w-4xl mx-auto py-8 prose-headings:font-bold prose-headings:text-black"
+	>
+		{
+			post.data.coverImage && (
+				<img
+					src={post.data.coverImage}
+					alt={post.data.title}
+					class="w-full h-[500px] object-cover rounded-none mb-12 grayscale hover:grayscale-0 transition duration-500"
+				/>
+			)
+		}
+		<h1 class="mb-8 text-5xl font-black text-black leading-tight">
+			{post.data.title}
+		</h1>
+		<div class="font-serif text-lg leading-relaxed text-gray-800">
+			<Content />
+		</div>
+	</article>
+</Layout>
