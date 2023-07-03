@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@utility scrollbar-gutter-stable {
+    scrollbar-gutter: stable;
+}
+
+@theme {
+    --font-serif: "Lusitana", serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
