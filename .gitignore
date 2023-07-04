@@ -1,0 +1,10 @@
+# Gitignore for 11ty
+
+# VS files
+.vs/
+
+# Build output
+_site/
+
+# Node modules
+node_modules/
