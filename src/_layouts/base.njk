@@ -7,7 +7,16 @@
         <link rel="preconnect" href="https://fonts.cdnfonts.com" />
         <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/itc-serif-gothic-2" />
         <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" />
-        <title>Berken Tekin - {{title}}</title>
+
+        <!-- Meta -->
+        <title>{{site.title}}{% if title %} - {{title}} {% endif %}</title>
+        <meta name="description" content="
+            {% if description %}
+                {{description}}
+            {% else %}
+                {{site.description}}
+            {% endif %}
+        "/>
     </head>
     <body>
         {% include "partials/_navigation.njk" %}
