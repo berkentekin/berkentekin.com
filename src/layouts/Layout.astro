@@ -2,9 +2,10 @@
 import { ClientRouter } from "astro:transitions";
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "One person among billions" } = Astro.props;
 import "../styles/global.css";
 import "@fontsource/lusitana/400.css";
 import "@fontsource/lusitana/700.css";
@@ -14,7 +15,7 @@ import "@fontsource/lusitana/700.css";
 <html lang="en" class="scrollbar-gutter-stable">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
