@@ -15,6 +15,7 @@ const isBuild = process.argv.includes('build');
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
+  prefetch: true,
   vite: {
     plugins: [tailwindcss()],
     resolve: isBuild ? {
