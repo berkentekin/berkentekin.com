@@ -52,7 +52,7 @@ export function trackEvent(
                 referer,    // Blob 5: Referer
                 action      // Blob 6: Action (e.g. 'like', 'unlike')
             ],
-            doubles: [1],
+            doubles: [1, Date.now()],
             indexes: [path]
         });
 
